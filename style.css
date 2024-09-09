@@ -38,7 +38,7 @@ header {
 
 .search-bar input[type="text"] {
     width: 50%; /* Reduced width for the search bar */
-    max-width: 400px; /* Maximum width to avoid being too long */
+    max-width: 100px; /* Maximum width to avoid being too long */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 2px 0 0 2px;
