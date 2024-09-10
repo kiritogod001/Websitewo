@@ -1,0 +1,261 @@
+/* style.css */
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#sidebar-toggle {
+    margin-left: 15px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.logo img {
+    width: 100px; /* Adjust the logo size */
+    margin-left: 10px; /* Position the logo more to the right */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.search-bar input[type="text"] {
+    width: 50%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 2px 0 0 2px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007aff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 2px 2px 0;
+}
+
+.user-profile a {
+    text-decoration: none;
+    color: #007aff;
+    font-weight: bold;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 95px; /* Make the sidebar start below the header */
+    bottom: 0;
+    left: 0;
+    transform: translateX(-220px); /* Hide sidebar initially */
+    transition: transform 0.3s ease;
+}
+
+.sidebar.open {
+    transform: translateX(0); /* Show sidebar when open */
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Centering the toggle mode button */
+.sidebar .toggle-mode {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.toggle-mode button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007aff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Main Content Area */
+main {
+    margin-left: 0;
+    padding: 20px;
+    margin-top: 70px; /* Adjust to avoid overlap with header */
+    transition: margin-left 0.3s ease;
+}
+
+main.shifted {
+    margin-left: 220px; /* Adjust main content when sidebar is open */
+}
+
+.featured-video .video-player {
+    background-color: #000;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.featured-video img {
+    width: 100%;
+}
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.video-card {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.video-card img {
+    width: 100%;
+    height: auto;
+}
+
+.video-card h3 {
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #181818;
+    color: #f1f1f1;
+}
+
+header.dark-mode {
+    background-color: #202020;
+}
+
+.sidebar.dark-mode {
+    background-color: #202020;
+}
+
+.sidebar.dark-mode nav ul li a {
+    color: #f1f1f1;
+}
+
+.sidebar.dark-mode .toggle-mode button {
+    background-color: #333;
+}
+
+.video-card.dark-mode {
+    background-color: #282828;
+    color: #f1f1f1;
+}
+
+.search-bar.dark-mode input[type="text"] {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #f1f1f1;
+}
+
+.search-bar.dark-mode button {
+    background-color: #555;
+}
+
+/* Make footer dark in dark mode */
+footer.dark-mode {
+    background-color: #202020;
+    color: #f1f1f1;
+}
+
+/* Footer */
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.socials img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .video-grid {
+        justify-content: center;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .search-bar {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%; /* Search bar takes full width on small screens */
+    }
+}
