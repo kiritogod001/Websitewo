@@ -18,29 +18,18 @@ body, html {
 /* Header Styles */
 header {
     background-color: #fff;
-    padding: 10px 0;
+    padding: 5px 0; /* Reduced padding to make the header smaller */
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
+    height: 60px; /* Adjust to your desired size */
     top: 0;
-    width: 100%;
+    width: 100%; /* Account for sidebar width */
+    left: 0px; /* Align with sidebar */
     z-index: 1000;
-}
 
-#sidebar-toggle {
-    margin-left: 15px;
-    font-size: 20px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: #333;
-}
-
-.logo img {
-    width: 100px; /* Adjust the logo size */
-    margin-left: 10px; /* Position the logo more to the right */
 }
 
 .search-bar {
@@ -72,6 +61,7 @@ header {
     text-decoration: none;
     color: #007aff;
     font-weight: bold;
+    margin-right: 20px; /* Move profile button to the left */
 }
 
 /* Sidebar Styles */
@@ -81,15 +71,30 @@ header {
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 95px; /* Make the sidebar start below the header */
+    top: 0; /* Align with top of the page */
     bottom: 0;
     left: 0;
-    transform: translateX(-220px); /* Hide sidebar initially */
+    transform: translateX(-300px); /* Sidebar is visible by default */
     transition: transform 0.3s ease;
+    z-index: 1100;
 }
 
-.sidebar.open {
-    transform: translateX(0); /* Show sidebar when open */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#sidebar-toggle, #header-sidebar-toggle {
+    font-size: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #333;
+  }
+.logo img {
+    width: 80px; /* Adjust the logo size */
 }
 
 .sidebar nav ul {
@@ -113,6 +118,8 @@ header {
     position: absolute;
     bottom: 20px;
     width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
 }
 
@@ -127,33 +134,45 @@ header {
 
 /* Main Content Area */
 main {
-    margin-left: 0;
     padding: 20px;
-    margin-top: 70px; /* Adjust to avoid overlap with header */
-    transition: margin-left 0.3s ease;
-}
-
-main.shifted {
-    margin-left: 220px; /* Adjust main content when sidebar is open */
+    margin-top: 60px; /* Adjust to avoid overlap with header */
+    margin-left: 200px; /* Account for the sidebar */
 }
 
 .featured-video .video-player {
-    background-color: #000;
+    background-color: #272727;
     padding: 10px;
     color: #fff;
     margin-bottom: 30px;
+    position: fixed; /* Keep the video fixed */
+    top: 60px; /* Start just below the header */
+    left: 100px; /* Align with sidebar */
+    width: calc(100% - 220px); /* Adjust width based on sidebar */
+    z-index: 999;
+    text-align: center;
 }
 
-.featured-video img {
+.featured-video text {
     width: 100%;
+    
+
 }
 
 .video-grid {
-    display: flex;
+    display: block flex;
     flex-wrap: wrap;
     gap: 15px;
+    margin-top: 100px; /* Provide space for the fixed video */
+    margin-left: 100px;
 }
 
+.player-grid {
+    display: block flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 100px; /* Provide space for the fixed video */
+    margin-left: 100px;
+}
 .video-card {
     background-color: #fff;
     border-radius: 5px;
@@ -258,4 +277,18 @@ footer {
     .search-bar input[type="text"] {
         width: 100%; /* Search bar takes full width on small screens */
     }
+
+    .user-profile {
+        margin-right: 10px;
+    }
 }
+
+.sidebar.open {
+    transform: translateX(0); /* When open, move the sidebar to the right */
+}
+
+.main.shifted {
+    margin-left: 0; /* Adjust main content when sidebar is hidden */
+   
+}
+
