@@ -8,23 +8,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <button id="sidebar-toggle">☰</button> <!-- Button to toggle sidebar visibility -->
-        <div class="logo">
-            <img src="logo.png" alt="ImpeccableWolf Logo">
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-        </div>
-        <div class="user-profile">
-            <a href="#">Profile</a>
-        </div>
-    </header>
-
     <!-- Sidebar -->
     <div class="sidebar">
+        <div class="sidebar-header">
+            <button id="sidebar-toggle">☰</button> <!-- Button to toggle sidebar visibility -->
+            <div class="logo">
+                <img src="logo.png" alt="ImpeccableWolf Logo">
+            </div>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -38,25 +29,56 @@
         </div>
     </div>
 
+    <!-- Header -->
+    <header>
+      
+        <button id="header-sidebar-toggle">☰</button> <!-- Button to toggle sidebar visibility -->
+        <div class="logo">
+            <img src="logo.png" alt="ImpeccableWolf Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <div class="user-profile">
+            <a href="#">Profile</a>
+        </div>
+    
+    </header>
+
     <!-- Main Content Area -->
     <main>
         <div class="featured-video">
             <div class="video-player">
-                <!-- Video Content -->
-                <img src="featured-video.jpg" alt="Featured Video">
+             <a>Clips</a>
             </div>
         </div>
         <div class="video-grid">
             <!-- Example Video Cards -->
             <div class="video-card">
-                <img src="video1.png" alt="Video Thumbnail">
-                <h3>Valorant Settings</h3>
+                <video width="300" height="200" controls>
+                    <source src="Valo.mp4" type="video/mp4">
+                    <source src="your_video.webm" type="video/webm">
+                    <!-- Fallback content if the browser doesn't support video -->
+                    Your browser doesn't support HTML5 video.
+                </video>
+            </div>
+            <div class="video-card">
+                <img src="video2.jpg" alt="Video Thumbnail">
+                <h3>Video Title 2</h3>
+            </div>
+            <div class="video-card">
+                <img src="video2.jpg" alt="Video Thumbnail">
+                <h3>Video Title 2</h3>
             </div>
             <div class="video-card">
                 <img src="video2.jpg" alt="Video Thumbnail">
                 <h3>Video Title 2</h3>
             </div>
         </div>
+        
+            
+        
     </main>
 
     <!-- Footer -->
@@ -66,7 +88,7 @@
             <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
             <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
         </div>
-        <p>&copy; 2024 ImpeccableWolf. All rights reserved.</p>
+        <p>&copy; 2024 ImpeccableWolf</p>
         <p>Under Development</p>
     </footer>
 
